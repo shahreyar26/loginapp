@@ -1,0 +1,49 @@
+<div class="">
+  <div class="row">
+   
+    <ng-container *ngFor="let pokemon of pokemonList">
+      <div class="col-sm-3" style="margin: 0%;">
+        <div id="card"  [style.background]="getCardColor(pokemon.types[0].type.name)" >
+          <p class="hp">
+    
+            <span>HP</span>
+            {{ pokemon.hp }}
+    
+          </p>
+    
+          <!-- Bulbsaur PNG just as example -->
+          <img [src]="pokemon.image" alt="{{ pokemon.name }}" title="{{ pokemon.name }}">
+    
+          <h2 class="poke-name">{{ pokemon.name }}</h2>
+          <div class="types" >
+            <ng-container *ngFor="let pk of pokemon.types">
+              <span [style.background-color]="getColor(pokemon.types[0].type.name)" >{{pk.type.name}}</span>
+            </ng-container>
+           
+          </div>
+          <div class="stats"
+          >
+    
+            <div>
+              <h3>{{ pokemon.attack }}</h3>
+              <p>Attack</p>
+            </div>
+    
+            <div>
+              <h3>{{pokemon.defense}}</h3>
+              <p>Defense</p>
+            </div>
+    
+            <div>
+              <h3>{{pokemon.speed}}</h3>
+              <p>Speed</p>
+            </div>
+    
+          </div>
+        </div>
+      </div>
+    
+    </ng-container>
+  </div>
+</div>
+

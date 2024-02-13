@@ -1,0 +1,53 @@
+<!-- <div class="login-container">
+    <div class="login-content">
+      <mat-toolbar class="login-toolbar" color="primary">My App</mat-toolbar>
+      <mat-card>
+        <form  [formGroup]="loginform">
+         
+            <input autofocus type="text" matInput placeholder="Username" formControlName="username">
+         
+         
+            <input type="password" autocomplete="false" matInput placeholder="Password" formControlName="password">
+      
+  
+          <button (click)="onSubmit()" type="submit" mat-raised-button color="primary">Login</button>
+        </form>
+      </mat-card>
+    </div>
+  </div>-->
+<form [formGroup]="loginform">
+  <div class="imgcontainer">
+    <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter username" name="uname" formControlName="username">
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" formControlName="password">
+
+    <button (click)="onSubmit()" type="submit" >Login
+    </button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+   <div class="container" style="background-color:#3f3fab">
+    <input type="text" value="username : {{data.username}}">
+    <input type="text" value="password : {{data.password}}">
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div> 
+  <!-- <div class="container">
+    <label for="uname"><b>username</b></label>
+    <input type="text" placeholder="Enter username" name="uname" formControlName="username">
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" formControlName="password"> -->
+
+    <!-- <button (click)="onSubmit()" type="submit" >Login
+   </button>
+
+
+  <div></div> -->
+</form>

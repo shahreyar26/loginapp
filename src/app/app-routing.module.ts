@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TaskComponent } from './task/task.component';
 import { DemoComponent } from './demo/demo.component';
 import { Page1Component } from './page/page2/page1.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
 
 const routes: Routes = [
   {
@@ -17,7 +18,10 @@ const routes: Routes = [
     path: 'extra',
     component: Page1Component
   },
-
+  {
+    path: 'pokemon',
+    component: PokemonComponent
+  },
   // Add more routes as needed
 ];
 

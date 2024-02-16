@@ -1,0 +1,31 @@
+<div class="container">
+    <div  id="card" [style.background]="getCardColor(displayedPokemon.types[0].type.name)" *ngIf="displayedPokemon">
+        <p class="hp">
+
+            <span>HP</span>
+            {{ displayedPokemon.hp }}
+          </p>
+          <img [src]="displayedPokemon.image" alt="{{ displayedPokemon.name }}">
+          <h2 class="poke-name">{{ displayedPokemon.name }}</h2>
+          <div class="types">
+            <span *ngFor="let pk of displayedPokemon.types" [style.background-color]="getColor(pk.type.name)">
+              {{ pk.type.name }}
+            </span>
+          </div>
+          <div class="stats">
+            <div>
+              <h3>{{ displayedPokemon.attack }}</h3>
+              <p>Attack</p>
+            </div>
+            <div>
+              <h3>{{ displayedPokemon.defense }}</h3>
+              <p>Defense</p>
+            </div>
+            <div>
+              <h3>{{ displayedPokemon.speed }}</h3>
+              <p>Speed</p>
+            </div>
+          </div>
+        </div>
+        <button id="btn" (click)="generateRandomPokemon()">Generate</button>
+ </div>

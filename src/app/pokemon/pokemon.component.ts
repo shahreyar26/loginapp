@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { PokemonService } from 'src/app/sevices/pokemon.service';
+import { Component } from '@angular/core';
+import { PokemonService } from '../sevices/pokemon.service';
 
 @Component({
-  selector: 'app-page1',
-  templateUrl: './page1.component.html',
-  styleUrls: ['./page1.component.css']
+  selector: 'app-pokemon',
+  templateUrl: './pokemon.component.html',
+  styleUrls: ['./pokemon.component.css']
 })
-export class Page1Component implements OnInit {
+export class PokemonComponent {
 
 
+  
   pokemonList: any[] = [];
   currentIndex:number=0;
   colorArray: any[] = ["grass", "fire", "water", "other"]
@@ -29,15 +30,24 @@ export class Page1Component implements OnInit {
     psychic: "#a29bfe",
     rock: "#2d3436",
     water: "#0190ff"
-}
+};
+displayedPokemon: any;
+pokemon: any;
   constructor(private apiService: PokemonService) { }
 
   ngOnInit(): void {
+    this.getPokemonList()
     
+
+  }
+  getPokemonList(){
     this.apiService.getPokemonList().subscribe(
       {
         next: (res: any) => {
-          this.getPokemonData(res.results)
+          if(res != null)
+          {
+            this.getPokemonData(res.results)
+          }
         }
       }
     );
@@ -61,6 +71,8 @@ export class Page1Component implements OnInit {
 
           };
           this.pokemonList.push(pokemonData);
+                    this.generateRandomPokemon()
+
         },
         (error) => {
           console.error(`Error fetching details for ${pokemon.name}:`, error);
@@ -85,8 +97,23 @@ export class Page1Component implements OnInit {
     const color = this.typeColor[type];
     let styleCard = `radial-gradient( circle at 30% 0%, ${color} 26%, #efffff 66%)`;
     return styleCard
+  
     
-  };
+  
+  }
+  
+  generateRandomPokemon(): void {
+    
+    const randomIndex = Math.floor(Math.random() * this.pokemonList.length);
+    this.displayedPokemon = this.pokemonList[randomIndex];
+
+
+}
+
+  
+
+  
+
 
 
 }

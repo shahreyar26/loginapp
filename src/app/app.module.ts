@@ -13,7 +13,8 @@ import { CommonModule } from '@angular/common';
 import { DemoComponent } from './demo/demo.component';
 import { Page1Component } from './page/page2/page1.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PokemonService } from './sevices/pokemon.service';
+import { PokemonComponent } from './pokemon/pokemon.component';
+
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { PokemonService } from './sevices/pokemon.service';
     TaskComponent,
     DemoComponent,
     Page1Component,
+    PokemonComponent
   ],
   imports: [
     HttpClientModule,
@@ -33,7 +35,9 @@ import { PokemonService } from './sevices/pokemon.service';
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+  
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

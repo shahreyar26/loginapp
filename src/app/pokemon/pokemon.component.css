@@ -13,30 +13,29 @@ body{
     background-color: #eff3ff;
 }
 
-/* .container{
+.container{
     width: 350px;
     border: 1px ;
-   margin: 15px;
-   
-} */
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
 /*End background*/
 
 /*Making the card*/
 #card{
     position: relative;
-    width: 98%;
-    height: 98%;
-    margin:5%;
+    width: 100%;
     padding: 30px 20px;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
-    border-radius: 10px;
-  ;
+    border-radius: 50px;
 }
 
 #card img {
     display: block;
     width: 180px;
-    max-height: 150px;
+    max-height: 200px;
     position: relative;
     margin: 20px auto;
 }
@@ -54,7 +53,6 @@ body{
 .poke-name{
     text-align: center;
     font-weight: 600;
-    font-family: cursive;
 }
 
 .types{
@@ -68,7 +66,6 @@ body{
     font-size: 12px;
     letter-spacing: 0.4px;
     font-weight: 600;
-  
 }
 
 .types span{
@@ -94,8 +91,9 @@ body{
     display: block;
     padding: 15px 60px;
     font-size: 18px;
-    background-color: #101010;
-    color: #ffffff;
+    font-family: cursive;
+    background-color: #040404;
+    color: #f9f7f7;
     position: relative;
     margin: 30px auto;
     border: none;

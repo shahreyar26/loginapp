@@ -1,6 +1,6 @@
-<div class="extra">
+<div class="">
   <div class="row">
-   
+    
     <ng-container *ngFor="let pokemon of pokemonList">
       <div class="col-sm-3" style="margin: 0%;">
         <div id="card"  [style.background]="getCardColor(pokemon.types[0].type.name)" >
@@ -26,24 +26,27 @@
     
             <div>
               <h3>{{ pokemon.attack }}</h3>
-              <p>Attack</p>
+             <b> <p>Attack</p></b>
             </div>
     
             <div>
               <h3>{{pokemon.defense}}</h3>
-              <p>Defense</p>
+             <b> <p>Defense</p></b>
             </div>
     
             <div>
               <h3>{{pokemon.speed}}</h3>
-              <p>Speed</p>
+             <b> <p>Speed</p></b>
             </div>
-    
+            
           </div>
+          
         </div>
+        
       </div>
-    
+      
     </ng-container>
   </div>
+  <button id="btn">Generate</button>
 </div>
 
